@@ -2,8 +2,6 @@
 
 Gia is a highly autonomous AI assistant capable of comprehending, planning, and executing complex tasks across various domains with minimal human intervention. It leverages local AI models, dynamic tool creation, and various data-gathering capabilities.
 
-![Gia Interface]([https://raw.githubusercontent.com/yourusername/gia/main/docs/images/gia-interface.png](https://giapcwdysr1-espj--5173--1b4252dd.local-corp.webcontainer.io))
-
 ## Features
 
 - 🧠 **Task Decomposition & Problem-Solving**

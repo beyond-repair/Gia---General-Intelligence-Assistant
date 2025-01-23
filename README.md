@@ -56,7 +56,7 @@ Gia consists of two main components:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/gia.git
+   git clone https://github.com/beyond-repair/gia.git
    cd gia
    ```
 

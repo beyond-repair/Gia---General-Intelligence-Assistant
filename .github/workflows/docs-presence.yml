@@ -1,0 +1,21 @@
+name: docs-presence
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: required files and UNSUPPORTED token
+        run: |
+          set -e
+          test -f README.md
+          test -f GOVERNANCE.md
+          test -f CLAIM_STATUS.md
+          test -f SUPERSEDED.md
+          grep -q UNSUPPORTED CLAIM_STATUS.md
+          grep -q SUPERSEDED GOVERNANCE.md

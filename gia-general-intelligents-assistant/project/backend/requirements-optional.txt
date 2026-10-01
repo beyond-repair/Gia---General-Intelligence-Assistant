@@ -1,0 +1,9 @@
+# Optional extras for live / real-LLM mode (not needed for Claim-0 stub path)
+beautifulsoup4>=4.12.0
+aiohttp>=3.9.0
+PyGithub>=2.2.0
+requests>=2.32.0
+# torch
+# transformers
+# accelerate
+# bitsandbytes

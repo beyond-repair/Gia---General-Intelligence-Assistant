@@ -1,3 +1,21 @@
+<div align="center">
+
+[![Lifecycle](https://img.shields.io/badge/●_SUPERSEDED-f59e0b?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance)
+[![Claim](https://img.shields.io/badge/Claim_0-22c55e?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance/blob/main/docs/CLAIM_VALIDATION.md)
+[![Governance](https://img.shields.io/badge/ADL--Governance-7c3aed?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance)
+
+```
+LIFECYCLE   SUPERSEDED
+CLAIM       0
+SUCCESSOR   sovereign-clean-room
+```
+
+</div>
+
+> **SUPERSEDED.** Canonical successor: [sovereign-clean-room](https://github.com/beyond-repair/sovereign-clean-room). No new feature work.
+
+---
+
 # Gia (General Intelligence Assistant) — SUPERSEDED
 
 **Classification:** SUPERSEDED (Sweep-113)  
@@ -35,3 +53,14 @@ No further feature work. Operator may apply the GitHub archive flag.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+---
+
+<div align="center">
+
+**REWRITE · BUILD · TRANSCEND**
+
+Governing source: [ADL-Governance](https://github.com/beyond-repair/ADL-Governance) · [Claim levels 0–5](https://github.com/beyond-repair/ADL-Governance/blob/main/docs/CLAIM_VALIDATION.md)
+
+</div>

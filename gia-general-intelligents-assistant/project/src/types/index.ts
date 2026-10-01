@@ -1,7 +1,7 @@
 export interface Task {
   id: string;
   description: string;
-  status: 'pending' | 'processing' | 'completed' | 'failed';
+  status: 'pending' | 'processing' | 'completed' | 'failed' | string;
   steps: TaskStep[];
   result?: string;
   createdAt: Date;
@@ -11,9 +11,9 @@ export interface Task {
 export interface TaskStep {
   id: string;
   name: string;
-  status: 'pending' | 'processing' | 'completed' | 'failed';
+  status: 'pending' | 'processing' | 'completed' | 'failed' | string;
   output?: string;
-  type: 'understand_task' | 'gather_information' | 'generate_code' | 'execute_code' | 'self_correct';
+  type: string;
 }
 
 export interface WorkflowNode {

@@ -12,48 +12,103 @@ SUCCESSOR   sovereign-clean-room
 
 </div>
 
-> **SUPERSEDED.** Canonical successor: [sovereign-clean-room](https://github.com/beyond-repair/sovereign-clean-room). No new feature work.
+> **SUPERSEDED.** Canonical successor: [sovereign-clean-room](https://github.com/beyond-repair/sovereign-clean-room). No new product-feature work beyond keeping this Claim-0 prototype runnable.
 
 ---
 
-# Gia (General Intelligence Assistant) — SUPERSEDED
+# Gia (General Intelligence Assistant) — Claim-0 runnable sketch
 
 **Classification:** SUPERSEDED (Sweep-113)  
 **Successor:** [`sovereign-clean-room`](https://github.com/beyond-repair/sovereign-clean-room)  
-**Claim level:** 0 — historical FastAPI + Vite prototype. Product AGI claims are **UNSUPPORTED**.
+**Claim level:** 0 — historical FastAPI + Vite prototype with **stub agents**. Product AGI claims are **UNSUPPORTED**.
 
 See [CLAIM_STATUS.md](CLAIM_STATUS.md) and [GOVERNANCE.md](GOVERNANCE.md).
 
-## What this repo actually contains
+## What this repo contains
 
 Nested tree `gia-general-intelligents-assistant/project/`:
 
-- Python FastAPI sketch (`backend/app`) with agent class files (LLM, scraper, GitHub, code execution).
-- React/Vite UI (`src/`) for task list / workflow visualization.
-- CodeQL workflow. No unit tests. `app.models` imported by `main.py` is **not present**.
-- Duplicate directory `backend ` (trailing space) with a second `run.py`.
+- **Backend** (`backend/`): FastAPI + SQLAlchemy (aiosqlite) task API; workflow engine; stub agents (`llm`, `scraper`, `github`, `code_execution`).
+- **Frontend** (`src/`): React/Vite UI that submits tasks to the API and polls status.
+- Default path does **not** download Mistral or require torch/Docker/network.
 
-Installation paths in older README text (`cd backend`, `cd frontend`, clone `gia.git`) do **not** match this tree. Treat them as stale.
+## Quick start
 
-## Features (claimed historically — not validated)
+```bash
+git clone https://github.com/beyond-repair/Gia---General-Intelligence-Assistant.git
+cd Gia---General-Intelligence-Assistant/gia-general-intelligents-assistant/project
+```
 
-The following remain **UNSUPPORTED** until tests + listed CI + evidence exist (they do not):
+### Backend
 
-- Autonomous task decomposition
-- Local Mistral-7B integration
-- Secure sandboxed execution
-- Self-correcting workflows
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python run.py               # http://127.0.0.1:8000
+```
+
+Smoke:
+
+```bash
+curl -s http://127.0.0.1:8000/health
+curl -s -X POST http://127.0.0.1:8000/tasks/ \
+  -H 'Content-Type: application/json' \
+  -d '{"description":"Write a hello world function"}'
+curl -s http://127.0.0.1:8000/tasks/
+```
+
+### Frontend
+
+From `gia-general-intelligents-assistant/project/` (with backend running):
+
+```bash
+npm install
+npm run dev                 # http://127.0.0.1:5173 — talks to API on :8000
+# or production build:
+npm run build
+```
+
+Optional: `VITE_API_BASE=http://127.0.0.1:8000` (default).
+
+### Tests
+
+```bash
+cd backend
+source .venv/bin/activate
+pytest -q
+```
+
+## Optional live mode (not required)
+
+| Env var | Effect |
+|---------|--------|
+| `GIA_USE_REAL_LLM=1` | Try loading transformers model (`GIA_LLM_MODEL`, needs optional torch stack) |
+| `GIA_ALLOW_NETWORK=1` | Allow scraper / GitHub live calls |
+| `GIA_ALLOW_CODE_EXEC=1` | Run generated Python via local subprocess |
+| `GIA_DATABASE_URL` | Override SQLite URL (default `sqlite+aiosqlite:///./gia_tasks.db`) |
+
+Optional packages: `pip install -r requirements-optional.txt` (still no torch by default).
+
+## Honesty / claims
+
+The following remain **UNSUPPORTED**:
+
+- Autonomous general intelligence / AGI
+- Local Mistral-7B as a shipped default capability
+- Secure Docker sandbox as the default path
+- Self-correcting adaptive intelligence beyond the stub pipeline
+
+What **is** verified at Claim-0: create/list tasks via API; stub agents execute a fixed workflow; UI can submit and show status; unit tests pass.
 
 ## Governance
 
 Portfolio source of truth: [`ADL-Governance`](https://github.com/beyond-repair/ADL-Governance).
 
-No further feature work. Operator may apply the GitHub archive flag.
-
 ## License
 
 MIT — see [LICENSE](LICENSE).
-
 
 ---
 

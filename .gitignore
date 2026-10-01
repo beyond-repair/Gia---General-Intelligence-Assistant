@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.db
+.env
+node_modules/
+dist/
+.DS_Store
+*.egg-info/
+.pytest_cache/
+gia-general-intelligents-assistant/project/backend/gia_tasks.db
